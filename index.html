@@ -122,9 +122,13 @@ Raspberry Pi,温度、湿度センサを用いたモニタリング（2025年4�
 
 <style>
   .container {
-    text-align: left;
-    margin: 30px;
+    
+    align-items: center; /* 垂直方向の中央揃え (任意) */
+    gap: 20px; /* 画像と説明文の間に隙間を開ける (任意) */
+    
   }
+ 
+  
   .description {
     font-size: 18px;
     margin-bottom: 15px;
@@ -138,7 +142,7 @@ Raspberry Pi,温度、湿度センサを用いたモニタリング（2025年4�
 </style>
 
 <div class="container">
-<h3 class="description"> DJI TELLO、YOLO-V5,Raspberry Piを用いたリアルタイム中玉トマト（ミディトマト）着色判定試行（４色の赤色）</h3>
+<h3> DJI TELLO、YOLO-V5,Raspberry Piを用いたリアルタイム中玉トマト（ミディトマト）着色判定試行（４色の赤色）</h3>
 <p class="description">収穫前にハウス内の中玉トマトの着色状況をドローンで確認する</p>
 <video controls >
  <source src="/images/midi-tomato-yolo-v5.mp4" type="video/mp4" />
