@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浦井情報システム | 培ったIT技術で「モノ作り」の課題解決支援</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .video-overlay { background: rgba(15, 23, 42, 0.6); }
+        
+        /* スムーズスクロールの設定 */
+        html { scroll-behavior: smooth; }
+        
+        /* ナビゲーションの高さ分、スクロール位置を調整 */
+        section { scroll-margin-top: 80px; }
+
+        .feature-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .case-image { transition: transform 0.5s ease; }
+        .case-card:hover .case-image { transform: scale(1.05); }
+        .media-placeholder {
+            background-color: #f8fafc;
+            border: 2px dashed #e2e8f0;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 250px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- ナビゲーション -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex flex-col cursor-pointer" onclick="location.href='#home'">
+                    <span class="text-xl font-bold text-blue-700 leading-none">浦井情報システム</span>
+                    <span class="text-[10px] text-slate-500 mt-1 uppercase tracking-widest">Urai Information System</span>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#home" class="hover:text-blue-700 px-3 py-2 text-sm font-medium">ホーム</a>
+                        <a href="#services" class="hover:text-blue-700 px-3 py-2 text-sm font-medium">業務分野</a>
+                        <a href="#case-studies" class="hover:text-blue-700 px-3 py-2 text-sm font-medium">開発事例</a>
+                        <a href="#agriculture" class="hover:text-blue-700 px-3 py-2 text-sm font-medium text-green-600 font-bold">農業IT</a>
+                        <a href="#info" class="hover:text-blue-700 px-3 py-2 text-sm font-medium">基本情報</a>
+                        <a href="#contact" class="bg-blue-700 text-white px-6 py-2 rounded shadow-md hover:bg-blue-800 transition-colors text-sm font-medium">お問い合わせ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section id="home" class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute z-10 w-auto min-w-full min-h-full max-w-none object-cover">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-connection-dots-and-lines-4830-large.mp4" type="video/mp4">
+        </video>
+        <div class="absolute z-20 w-full h-full video-overlay"></div>
+        <div class="relative z-30 text-center px-4 max-w-4xl">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                培ったIT技術で<br><span class="text-blue-400">「モノ作り」</span>の課題解決支援
+            </h1>
+            <p class="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed">
+                FAシステムの構築から、AIを活用した次世代農業支援まで。
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#agriculture" class="bg-green-600 text-white px-8 py-4 rounded font-bold hover:bg-green-700 transition-all shadow-lg">
+                    農業ITの全事例を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 重点業務分野 -->
+    <section id="services" class="py-16 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">重点業務分野</h2>
+                <div class="mt-4 w-20 h-1 bg-blue-700 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 bg-slate-50 rounded-xl feature-card">
+                    <h3 class="text-lg font-bold mb-2 text-blue-700">FA周辺システム</h3>
+                    <p class="text-slate-600 text-sm">機器と生産管理を結ぶインターフェイス最適化。</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-xl feature-card">
+                    <h3 class="text-lg font-bold mb-2 text-blue-700">IT化・AI支援</h3>
+                    <p class="text-slate-600 text-sm">画像活用AIによる作業支援やツール活用助言。</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-xl feature-card">
+                    <h3 class="text-lg font-bold mb-2 text-blue-700">測定システム化</h3>
+                    <p class="text-slate-600 text-sm">2次元・3次元測定の精度維持とデータ取込み。</p>
+                </div>
+                <div class="p-6 bg-slate-50 rounded-xl feature-card">
+                    <h3 class="text-lg font-bold mb-2 text-blue-700">データベース構築</h3>
+                    <p class="text-slate-600 text-sm">Oracle, SQL Server等を用いた生産管理システム。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 開発事例 -->
+    <section id="case-studies" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">経験した主な開発事例</h2>
+                <div class="mt-4 w-20 h-1 bg-blue-400 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 text-sm">
+                <!-- FA周辺 -->
+                <div class="bg-slate-800/40 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-6 text-blue-400 border-l-4 border-blue-400 pl-4">ＦＡ周辺のシステム化</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>・ＦＡ専用システムと生産管理用ＤＢとのインターフェイスの計画・設計</li>
+                        <li>・A1000、MELSECのデータを活用（データ取り込み時に必要なラダーの作成含む）する仕組みの構築</li>
+                        <li>・ＦＡ専用システムをＷｉｎｄｏｗｓ化（スタッカークレーン、AGV、他設備との通信部） して、保守、運用性の向上</li>
+                        <li>・FANUCコントローラのパラメータの見える化、変更システムの開発</li>
+                    </ul>
+                </div>
+                <!-- 測定データ -->
+                <div class="bg-slate-800/40 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-6 text-blue-400 border-l-4 border-blue-400 pl-4">測定データのシステム化</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>・測定システムの保守性、運用性に問題があり、中心となるOSへの切り替え作業</li>
+                        <li>・測定システム（２次元、３次元）の改善（安全性の考慮）、保守（測定器の更新時による）</li>
+                        <li>・インバーター（安川電機）、モータ試験機を用いた簡易なモーター評価測定システムの開発（モータ選定、PLCからのデータ取込み含む）</li>
+                    </ul>
+                </div>
+                <!-- データベース -->
+                <div class="bg-slate-800/40 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-6 text-blue-400 border-l-4 border-blue-400 pl-4">データベース (商用DB,OSSDB)利用</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>・Oracle、SQL SERVERを活用したデータの検索システム（見える化、グラフ化）の開発</li>
+                        <li>・バーコードを活用して、加工、塗装、検査工程の検査データをリアルタイムにＤＢへ入力するシステムの計画、設計、評価</li>
+                    </ul>
+                </div>
+                <!-- IT化支援 -->
+                <div class="bg-slate-800/40 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-6 text-blue-400 border-l-4 border-blue-400 pl-4">IT化支援(中小企業様支援)</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li>・既存購買発注システムとホストファイルを照合、種分けするアプリの作成（重複、不足項目のチェックを含む）</li>
+                        <li>・工場でのRaspberry PI活用の支援（センサー、ADコントローラを使用）</li>
+                        <li>・工場のレガシーな工作機械のNCプログラム管理の支援・提案</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 農業ITセクション -->
+    <section id="agriculture" class="py-24 bg-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-bold tracking-widest uppercase text-sm">Agricultural Innovation</span>
+                <h2 class="text-4xl font-bold text-slate-900 mt-2">農業分野へのIT応用事例</h2>
+                <div class="mt-4 w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-12">
+                <!-- 事例1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-green-100">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-8 md:p-12">
+                            <span class="text-xs font-bold text-green-600 uppercase tracking-tighter">Case 01</span>
+                            <h3 class="text-xl font-bold mt-2 mb-4">１．シャインマスカットの収穫支援アプリ</h3>
+                            <p class="text-xs text-slate-500 mb-4 font-medium">※第２１２SE研究発表会で発表、HIT−２０２４で紹介</p>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                スマートフォンで撮影した写真から、収穫時期をリアルタイムに判定します。
+                            </p>
+                            <div class="bg-green-50 p-6 rounded-2xl border border-green-100">
+                                <h4 class="font-bold text-green-800 text-sm mb-2">AIによる判定結果</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed italic">
+                                    判定結果：(0,1,2の3段階中2)<br>
+                                    0、2が収穫に適しており、0は2より甘く黄色に近いのが特徴です。経験の浅い生産者や、ぶどう狩りの収穫判定支援を目的としています。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="rounded-2xl overflow-hidden shadow-inner">
+    　　　　　　　　　　　　　　<img src="images/IMG_3715-2.PNG" alt=  収穫支援アプリ" class="max-w-full max-h-[300px] object-contain">
+　　　　　　　　　　　　　　　</div>
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                 <!-- 事例2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-green-100">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-8 md:p-12">
+                            <span class="text-xs font-bold text-green-600 uppercase tracking-tighter">Case 02</span>
+                            <h3 class="text-xl font-bold mt-2 mb-4">２．シャインマスカットの収穫支援アプリ（YOLO-V5 粒カウント）</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                収穫時に撮影した写真から粒数のカウントと５段階の判定を自動で行います。
+                            </p>
+                            <div class="flex items-center space-x-2 text-green-700 font-bold text-xs">
+                                <span class="bg-green-100 px-3 py-1 rounded-full">平均値３以上で収穫適正</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="rounded-2xl overflow-hidden shadow-inner flex justify-center bg-slate-100">
+                            <img src="images/シャインマスカット粒.jpg" alt="収穫支援アプリ" class="max-w-full max-h-[300px] object-contain">
+                           </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 事例3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-green-100">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-8 md:p-12">
+                            <span class="text-xs font-bold text-green-600 uppercase tracking-tighter">Case 03</span>
+                            <h3 class="text-xl font-bold mt-2 mb-4">３．スマートグラスを用いたハンズフリー収穫支援</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                スマートグラス（Vuzix 400）を用いて、収穫作業中にハンズフリーで粒数のカウントと５段階の判定が可能です。VuzixViewとYOLO-V5を組み合わせています。
+                            </p>
+                        </div>
+                        <div class="p-8">
+                           <div class="rounded-2xl overflow-hidden shadow-inner flex justify-center bg-slate-100">
+                           <img src="images/Vuzix View_20250305_194815_261.jpg" alt="収穫支援アプリ" class="max-w-full max-h-[300px] object-contain">
+                           </div>
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                  <!-- 事例4 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-green-100">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-8 md:p-12">
+                            <span class="text-xs font-bold text-green-600 uppercase tracking-tighter">Case 04</span>
+                            <h3 class="text-xl font-bold mt-2 mb-4">４．大玉トマト収穫支援システム</h3>
+                            <p class="text-xs text-slate-500 mb-4 font-medium">※農業情報学会２０２３年度年次大会で発表</p>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                ３段階の着色（青、白、赤）を識別し、若就農者を対象とした収穫時期の判断をサポートします。
+                            </p>
+                        </div>
+                        <div class="p-8">
+                            <div class="rounded-2xl overflow-hidden shadow-inner flex justify-center bg-slate-100">
+                            <img src="images/tomato-AI-sysytem-2.jpg" alt="収穫支援アプリ" class="max-w-full max-h-[300px] object-contain">
+                           </div> 
+                                                     
+                            
+                        </div>
+                    </div>
+                </div>   
+                
+                
+                
+                
+                
+                
+                
+
+                <!-- 事例5 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-green-100">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-8 md:p-12">
+                            <span class="text-xs font-bold text-green-600 uppercase tracking-tighter">Case 05</span>
+                            <h3 class="text-xl font-bold mt-2 mb-4">５．Raspberry Pi センサを用いた遠隔モニタリング</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                ハウス内の室温、湿度、土壌温度をセンサで測定し、遠隔地からモニタリング。現場への移動負担を軽減します。
+                            </p>
+                            <p class="text-[10px] text-blue-600 font-bold mt-2 italic">※2025年4月以降、Line Messaging APIによる通知機能へ更新予定</p>
+                        </div>
+                        <div class="p-8">
+                            <div class="rounded-2xl overflow-hidden shadow-inner">
+                            <img src="images/Line-Message.jpeg" alt="遠隔モニタリング" class="max-w-full max-h-[300px] object-contain">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                  <!-- 事例6 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-green-100">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-8 md:p-12">
+                            <span class="text-xs font-bold text-green-600 uppercase tracking-tighter">Case 06</span>
+                            <h3 class="text-xl font-bold mt-2 mb-4">６．ドローンを用いたリアルタイム中玉トマト着色判定</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                DJI TELLO、YOLO-V5、Raspberry Piを活用。収穫前にハウス内をドローンで飛行し、中玉トマトの着色状況（赤色の４段階識別）を確認します。
+                            </p>
+                        </div>
+                        <div class="p-8">
+                           <div class="rounded-2xl overflow-hidden shadow-inner bg-black">
+    　　　　　　　　　　　　　　<video controls class="w-full h-auto max-h-[400px]">
+       　　　　　　　　　　　　 <source src="images/midi-tomato-yolo-v5.mp4" type="video/mp4">
+       　　　　　　　　　　　　 お使いのブラウザは動画再生に対応していません。
+    　　　　　　　　　　　　　　</video>
+　　　　　　　　　　　　　　</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </section>
+
+    <!-- 基本情報 -->
+    <section id="info" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">基本情報</h2>
+                    <dl class="space-y-6">
+                        <div class="flex border-b border-slate-100 pb-4">
+                            <dt class="w-32 font-bold text-slate-400">所属</dt>
+                            <dd class="font-bold">浦井情報システム</dd>
+                        </div>
+                        <div class="flex border-b border-slate-100 pb-4">
+                            <dt class="w-32 font-bold text-slate-400">代表者</dt>
+                            <dd class="font-bold">浦井 知彦</dd>
+                        </div>
+                        <div class="flex border-b border-slate-100 pb-4">
+                            <dt class="w-32 font-bold text-slate-400">所在地</dt>
+                            <dd class="text-sm">〒919-0522 福井県坂井市坂井町清永１３−１６−４</dd>
+                        </div>
+                        <div class="flex border-b border-slate-100 pb-4">
+                            <dt class="w-32 font-bold text-slate-400">連絡先</dt>
+                            <dd class="text-sm">
+                                Tel: <a href="tel:09051738704" class="text-blue-600 font-bold">090-5173-8704</a><br>
+                                Email: tomohikod4「ここにアットマークを入れてください」yahoo.co.jp
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="bg-slate-50 p-10 rounded-3xl">
+                    <h3 class="text-xl font-bold mb-4">メッセージ</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        長年、FA周辺や測定データのシステム化に携わってきた経験を活かし、現在は農業分野でのAI・IT活用にも積極的に取り組んでおります。
+                        「現場で本当に使える仕組み」を、福井の地から提案・構築し続けてまいります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact" class="py-24 bg-blue-700 text-white text-center">
+        <h2 class="text-4xl font-bold mb-8">お問い合わせ</h2>
+        <div class="max-w-2xl mx-auto px-4">
+            <div class="bg-white text-slate-900 p-8 rounded-3xl shadow-2xl">
+                <p class="text-sm text-slate-500 mb-4">開発のご相談、詳細資料のご請求など、お気軽にお問い合わせください。</p>
+                <a href="mailto:tomohikod4@yahoo.co.jp" class="text-xl md:text-2xl font-bold text-blue-700 hover:underline">tomohikod4「ここにアットマークを入れてください」yahoo.co.jp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-600 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-white font-bold mb-2">浦井情報システム</p>
+            <p class="text-[10px]">© 2025 Urai Information System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // スクロール時にナビゲーションに影をつける
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
